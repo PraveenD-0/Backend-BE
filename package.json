@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/PraveenD-0/Backend-BE/issues"
   },
-  "homepage": "https://github.com/PraveenD-0/Backend-BE#readme"
+  "homepage": "https://github.com/PraveenD-0/Backend-BE#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
