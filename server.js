@@ -1,14 +1,13 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const config = require('./utils/config');
 
 // middleware
 app.use(express.json());
 
 // connect to the database
-const url = `mongodb+srv://praveend4110:Praveend@praveen0cluster.rclfnyg.mongodb.net/`;
-
-mongoose.connect(url)
+mongoose.connect(config.MONGODB_URI)
     .then(() => {
         console.log('Connected to MongoDB...');
     })
@@ -135,6 +134,6 @@ const HOSTNAME = 'localhost';
 const PORT = 3001;
 
 // make the server to listen to the defined portnumber
-app.listen(PORT, () => {
-    console.log(`Server running at http://${HOSTNAME}:${PORT}`);
+app.listen(config.PORT, () => {
+    console.log(`Server running on port ${config.PORT}`);
 });
